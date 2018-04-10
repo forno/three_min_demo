@@ -1,0 +1,27 @@
+\documentclass[dvipdfmx,8pt]{beamer}
+\input{usepackage}
+\input{setting}
+
+%----title infomain----
+\title{Title}
+\author{author}
+\institute{Kaori Lab., Kyushu Institute of Technology}
+\date{\today}
+
+%----start slide----
+\begin{document}
+%----title page----
+\frame[plain]{
+  \titlepage
+}
+\addtocounter{framenumber}{-1}
+%----bibliography----
+\begin{frame}[allowframebreaks,allowdisplaybreaks,plain]
+  \nocite{*}
+	\bibliographystyle{junsrt}
+	\bibliography{my} %Change 'bibfile' to your bib file name
+\end{frame}
+%----main slide----
+\input{frame/sample.tex}
+
+\end{document}

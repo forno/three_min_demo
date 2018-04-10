@@ -1,0 +1,48 @@
+\begin{frame}[plain,t]
+  {竹越智也; 萩原将文. 感情を付与した人型ロボット動作自動生成システム. 日本感性工学会論文誌, 2017.}
+  %%%Image area
+  \begin{minipage}[t]{\linewidth}
+      \includegraphics[height=0.15\textheight,keepaspectratio]{img/img.png}
+      \includegraphics[height=0.15\textheight,keepaspectratio]{img/img.png}
+  \end{minipage}
+
+  %%%Text area
+  \begin{multicols}{2}
+    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+      どんなもの？
+    \end{beamercolorbox}
+    基本動作をベクトル化し，ベクトル変換を行う事で基本動作に感情を付与する
+    
+    \vfill
+    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+      先行研究と比べてどこがすごい？
+    \end{beamercolorbox}
+    生成された動作に感情を付与するところ
+
+    \vfill
+    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+      技術や手法のキモはどこ？
+    \end{beamercolorbox}
+    入力動作→ベクトル→低次元化（26次元（頭2両腕両足6）から4次元に）＋感情→動作ベクトル→出力動作
+
+    \newpage
+    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+      どうやって有効だと検証した？
+    \end{beamercolorbox}
+    予備実験で特徴量を決定，提案手法で生成した動作を被験者に見せて被験者実験。正答率60\%，PCAだと4感情→2感情にすると80\%に。感情ごとの動作の特徴の分析
+
+    \vfill
+    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+      議論はある？
+    \end{beamercolorbox}
+    正答率の低さは学習に使うデータの少なさが原因→誤差計算してなくね？
+
+    \vfill
+    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+      次に読むべき論文は？
+    \end{beamercolorbox}
+    竹越智也，萩原将文：ロボット漫才自動生成システム，日本感性工学会．15(1)，pp.47-54，2016
+
+
+  \end{multicols}
+\end{frame}
