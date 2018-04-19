@@ -1,9 +1,11 @@
 \begin{frame}[plain,t]
-  {竹越智也; 萩原将文. 感情を付与した人型ロボット動作自動生成システム. 日本感性工学会論文誌, 2017.}
+  {早川智一; 疋田輝雄. HTML5を用いた仮想Webブラウザの提案と評価. 情報処理学会論文誌, 2016.}
   %%%Image area
   \begin{minipage}[t]{\linewidth}
-      \includegraphics[height=0.15\textheight,keepaspectratio]{img/img.png}
-      \includegraphics[height=0.15\textheight,keepaspectratio]{img/img.png}
+      \includegraphics[height=0.15\textheight,keepaspectratio]{img/Target.png}
+      \includegraphics[height=0.15\textheight,keepaspectratio]{img/SystemOverview.png}
+      \includegraphics[height=0.15\textheight,keepaspectratio]{img/BTS.png}
+      \includegraphics[height=0.15\textheight,keepaspectratio]{img/Result.png}
   \end{minipage}
 
   %%%Text area
@@ -11,38 +13,45 @@
     \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
       どんなもの？
     \end{beamercolorbox}
-    基本動作をベクトル化し，ベクトル変換を行う事で基本動作に感情を付与する
+    マルウェア感染メモリ領域を識別して，その領域からのシステムコールを検出する．
     
     \vfill
     \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
       先行研究と比べてどこがすごい？
     \end{beamercolorbox}
-    生成された動作に感情を付与するところ
+    プロセス全体からではなく，特定のメモリ領域ごとに検出が行える.
 
     \vfill
     \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
       技術や手法のキモはどこ？
     \end{beamercolorbox}
-    入力動作→ベクトル→低次元化（26次元（頭2両腕両足6）から4次元に）＋感情→動作ベクトル→出力動作
+    \begin{enumerate}
+      \item 改竄されない呼び出し解析(BTSの利用) \label{bts}
+      \item メモリ確保情報をもとにした感染領域の判別 \label{infection}
+    \end{enumerate}
 
     \newpage
     \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
       どうやって有効だと検証した？
     \end{beamercolorbox}
-    予備実験で特徴量を決定，提案手法で生成した動作を被験者に見せて被験者実験。正答率60\%，PCAだと4感情→2感情にすると80\%に。感情ごとの動作の特徴の分析
+    \begin{itemize}
+      \item \ref{bts}: BTS Traceとスタックトレースの比較: 改竄に対しても有用であった
+      \item \ref{infection}: MWSの動的活動観測 2014と同等のプログラムを検出(従来法ではできない)
+    \end{itemize}
 
     \vfill
     \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
       議論はある？
     \end{beamercolorbox}
-    正答率の低さは学習に使うデータの少なさが原因→誤差計算してなくね？
+    直接実行に比べ $10\%$ 以下のパフォーマンススコア． 流石に遅くない? $\to$ LBRの利用検討
 
     \vfill
     \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
       次に読むべき論文は？
     \end{beamercolorbox}
-    竹越智也，萩原将文：ロボット漫才自動生成システム，日本感性工学会．15(1)，pp.47-54，2016
+    Shinagawa, T. et al.: BitVisor: A Thin Hypervisor for Enforcing I/O Device Security(2009).
 
+    VMMの理解のため．
 
   \end{multicols}
 \end{frame}
