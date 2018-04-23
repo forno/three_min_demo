@@ -1,57 +1,102 @@
 \begin{frame}[plain,t]
-  {BTSを用いたシステムコール呼び出し元判別手法}
+  {Digression: This presentation is created by Beamer}
+
+  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+    Beamer is A LaTeX class for producing presentations and slides
+  \end{beamercolorbox}
+  https://github.com/josephwright/beamer
+
+  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+    How install Beamer
+  \end{beamercolorbox}
+  If you have texlive, Beamer is already.
+
+  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+    My source codes
+  \end{beamercolorbox}
+
+  This presentation source place on
+  
+  https://github.com/forno/three\_min\_demo
+
+
+\end{frame}
+
+\begin{frame}[plain,t]
+  {What do you need for deep learning works with CUDA}
   %%%Image area
-  \begin{minipage}[t]{\linewidth}
-      \includegraphics[height=0.15\textheight,keepaspectratio]{img/Target.png}
-      \includegraphics[height=0.15\textheight,keepaspectratio]{img/SystemOverview.png}
-      \includegraphics[height=0.15\textheight,keepaspectratio]{img/BTS.png}
-      \includegraphics[height=0.15\textheight,keepaspectratio]{img/Result.png}
-  \end{minipage}
+  %\begin{minipage}[t]{\linewidth}
+  %    \includegraphics[height=0.15\textheight,keepaspectratio]{img/Target.png}
+  %    \includegraphics[height=0.15\textheight,keepaspectratio]{img/SystemOverview.png}
+  %    \includegraphics[height=0.15\textheight,keepaspectratio]{img/BTS.png}
+  %    \includegraphics[height=0.15\textheight,keepaspectratio]{img/Result.png}
+  %\end{minipage}
 
   %%%Text area
   \begin{multicols}{2}
     \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-      どんなもの？
+      Device needs
     \end{beamercolorbox}
-    マルウェア感染メモリ領域を識別して，その領域からのシステムコールを検出する．
-    
-    \vfill
-    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-      先行研究と比べてどこがすごい？
-    \end{beamercolorbox}
-    プロセス全体からではなく，特定のメモリ領域ごとに検出が行える.
+    cuDNN require GPU which have capability 3.0 or higher.
 
-    \vfill
     \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-      技術や手法のキモはどこ？
+      Problem
     \end{beamercolorbox}
-    \begin{enumerate}
-      \item 改竄されない呼び出し解析(BTSの利用) \label{bts}
-      \item メモリ確保情報をもとにした感染領域の判別 \label{infection}
-    \end{enumerate}
+    High cost devices for a person
 
     \newpage
     \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-      どうやって有効だと検証した？
+      Software needs
     \end{beamercolorbox}
     \begin{itemize}
-      \item \ref{bts}: BTS Traceとスタックトレースの比較: 改竄に対しても有用であった
-      \item \ref{infection}: MWSの動的活動観測 2014と同等のプログラムを検出(従来法ではできない)
+      \item Apache MXNet
+      \item Caffe
+      \item Caffe2
+      \item Chainer
+      \item Gluon
+      \item Keras
+      \item Microsoft Cognitive Toolkit
+      \item OpenPose
+      \item PyTorch
+      \item TensorFlow
+      \item Theano
+      \item Torch
     \end{itemize}
 
-    \vfill
     \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-      議論はある？
+      Problem
     \end{beamercolorbox}
-    直接実行に比べ $10\%$ 以下のパフォーマンススコア． 流石に遅くない? $\to$ LBRの利用検討
-
-    \vfill
-    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-      次に読むべき論文は？
-    \end{beamercolorbox}
-    Shinagawa, T. et al.: BitVisor: A Thin Hypervisor for Enforcing I/O Device Security(2009).
-
-    VMMの理解のため．
-
+    Too many software and frameworks
   \end{multicols}
+\end{frame}
+
+\begin{frame}[plain,t]
+  {AWS Deep Learning AMI}
+
+  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+    Simple way
+  \end{beamercolorbox}
+  Most simple method:
+
+  \begin{enumerate}
+    \item Create EC2 general-purpose GPU instance with Deep Learning AMI with Conda
+    \item Run `source active python3`
+    \item Run `jupyter notebook --ip='*'`
+    \item Access to jupyter server
+  \end{enumerate}
+
+  You can use some deep learning tools!
+
+  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+    Specification of machine
+  \end{beamercolorbox}
+
+  On p3.2xlarge instance
+  \begin{itemize}
+    \item GPU: NVIDIA Tesla V100 GPU : x1
+    \item vCPU: 8 : It means 8 cores.
+    \item ECU: 23.5 : 1 ECU mean the same spec of 1.0-1.2 GHz 2007 Opteron.
+    \item Memory: 61 GiB
+    \item Cost: \$ $3.06 / 1$ hour
+  \end{itemize}
 \end{frame}
