@@ -1,4 +1,4 @@
-\begin{frame}[plain,t]
+\begin{frame}[plain]
   {Digression: This presentation is created by Beamer}
 
   \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
@@ -18,85 +18,38 @@
   This presentation source place on
   
   https://github.com/forno/three\_min\_demo
-
-
 \end{frame}
 
-\begin{frame}[plain,t]
-  {What do you need for deep learning works with CUDA}
-  %%%Image area
-  %\begin{minipage}[t]{\linewidth}
-  %    \includegraphics[height=0.15\textheight,keepaspectratio]{img/Target.png}
-  %    \includegraphics[height=0.15\textheight,keepaspectratio]{img/SystemOverview.png}
-  %    \includegraphics[height=0.15\textheight,keepaspectratio]{img/BTS.png}
-  %    \includegraphics[height=0.15\textheight,keepaspectratio]{img/Result.png}
-  %\end{minipage}
+\begin{frame}[plain]
+  {What is pytest}
 
   %%%Text area
-  \begin{multicols}{2}
-    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-      Device needs
-    \end{beamercolorbox}
-    cuDNN require GPU which have capability 3.0 or higher.
+  The pytest framework makes it easy to write small tests,
+  yet scales to support complex functional testing for applications and libraries.
 
-    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-      Problem
-    \end{beamercolorbox}
-    High cost devices for a person
+  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
+    {Features of pytest}
+  \end{beamercolorbox}
 
-    \newpage
-    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-      Software needs
-    \end{beamercolorbox}
-    \begin{itemize}
-      \item Apache MXNet
-      \item Caffe
-      \item Caffe2
-      \item Chainer
-      \item Gluon
-      \item Keras
-      \item Microsoft Cognitive Toolkit
-      \item OpenPose
-      \item PyTorch
-      \item TensorFlow
-      \item Theano
-      \item Torch
-    \end{itemize}
-
-    \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-      Problem
-    \end{beamercolorbox}
-    Too many software and frameworks
-  \end{multicols}
+  \begin{itemize}
+    \item Assertion operators are just one. `assert`
+    \item We can use some utility tools with decorator. `Fixture, Parametrize, TestGroups`
+  \end{itemize}
 \end{frame}
 
-\begin{frame}[plain,t]
-  {AWS Deep Learning AMI}
-
-  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-    Simple way
-  \end{beamercolorbox}
-  Most simple method:
+\begin{frame}[plain]
+  {Demo with test-driven development}
 
   \begin{enumerate}
-    \item Create EC2 general-purpose GPU instance with Deep Learning AMI with Conda
-    \item Run `source activate tensorflow\_p36`
-    \item Run `jupyter notebook --ip='*'`
-    \item Access to jupyter server
+    \item Make one minimum test
+    \item Make sure test failed
+    \item Make minimum implementation (You can hardcode)
+    \item Make sure \alert{ALL} test success
+    \item Add second test
+    \item Make sure test failed
+    \item Update implementation (You can hardcode)
+    \item Make sure \alert{ALL} test success
+    \item Continue Add test, Make sure \structure{Test failed}, Update implemantation and Keep test success
+    \item If you have no additional test, we get finish of implemantation
   \end{enumerate}
-
-  You can use some deep learning tools!
-
-  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-    Specification of machine
-  \end{beamercolorbox}
-
-  On p3.2xlarge instance
-  \begin{itemize}
-    \item GPU: NVIDIA Tesla V100 GPU : x1
-    \item vCPU: 8 : It means 8 cores.
-    \item ECU: 23.5 : 1 ECU mean the same spec of 1.0-1.2 GHz 2007 Opteron.
-    \item Memory: 61 GiB
-    \item Cost: \$ $3.06 / 1$ hour
-  \end{itemize}
 \end{frame}
