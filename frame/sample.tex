@@ -1,55 +1,77 @@
 \begin{frame}[plain]
-  {Digression: This presentation is created by Beamer}
-
-  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-    Beamer is A LaTeX class for producing presentations and slides
-  \end{beamercolorbox}
-  https://github.com/josephwright/beamer
-
-  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-    How install Beamer
-  \end{beamercolorbox}
-  If you have texlive, Beamer is already.
-
-  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-    My source codes
-  \end{beamercolorbox}
-
-  This presentation source place on
-  
-  https://github.com/forno/three\_min\_demo
-\end{frame}
-
-\begin{frame}[plain]
-  {What is pytest}
-
-  %%%Text area
-  The pytest framework makes it easy to write small tests,
-  yet scales to support complex functional testing for applications and libraries.
-
-  \begin{beamercolorbox}[rounded=true, center, shadow=true,wd=\linewidth]{frametitle}
-    {Features of pytest}
-  \end{beamercolorbox}
+  {Outline}
 
   \begin{itemize}
-    \item Assertion operators are just one. `assert`
-    \item We can use some utility tools with decorator. `Fixture, Parametrize, TestGroups`
+    \item The Keras
+    \item Neural network flow with Keras
+    \item Deep neural network
+    \item Flexible interface
   \end{itemize}
 \end{frame}
 
 \begin{frame}[plain]
-  {Demo with test-driven development}
+  {Keras}
 
-  \begin{enumerate}
-    \item Make one minimum test
-    \item Make sure test failed
-    \item Make minimum implementation (You can hardcode)
-    \item Make sure \alert{ALL} test success
-    \item Add second test
-    \item Make sure test failed
-    \item Update implementation (You can hardcode)
-    \item Make sure \alert{ALL} test success
-    \item Continue Add test, Make sure \structure{Test failed}, Update implemantation and Keep test success
-    \item If you have no additional test, we get finish of implemantation
-  \end{enumerate}
+  %%%Text area
+  Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano.
+  
+  It was developed with a focus on enabling fast experimentation.
+  
+  Being able to go from idea to result with the least possible delay is key to doing good research.
+
+  Their features:
+  \begin{itemize}
+    \item Allows for easy and fast prototyping (through user friendliness, modularity, and extensibility).
+    \item Supports both convolutional networks and recurrent networks, as well as combinations of the two.
+    \item Runs seamlessly on CPU and GPU.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+  {Neural network model constraction}
+
+  \begin{figure}
+    \centering
+    \includegraphics[height=2.5cm]{keras.pdf}
+    \caption{Full connected (Dense) single-layer neural net}
+  \end{figure}
+  \lstinputlisting[caption=model definition]{keras_sample.py}
+\end{frame}
+
+\begin{frame}[plain]
+  {Train the model}
+
+  \lstinputlisting[caption=model compile and fit]{train.py}
+\end{frame}
+
+\begin{frame}[plain]
+  {Deep neural network}
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=5cm]{multi.pdf}
+    \caption{Full connected (Dense) hidden-layer neural network}
+  \end{figure}
+  \lstinputlisting[caption=Deep neural net definition]{multi.py}
+\end{frame}
+
+\begin{frame}[plain]
+  {Second interface}
+
+  \lstinputlisting[caption=Deep neural net definition]{multi.py}
+  Oneline
+
+  \lstinputlisting[caption=Deep neural net definition]{multi2.py}
+  Multi line
+\end{frame}
+
+\begin{frame}[plain]
+  {Practical multiline interface}
+
+  \begin{figure}
+    \centering
+    \includegraphics[height=2.3cm]{practical.pdf}
+    \caption{Practical network}
+  \end{figure}
+  \lstinputlisting[caption=Deep neural net definition]{practical_multi_line.py}
 \end{frame}
