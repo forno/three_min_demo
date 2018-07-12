@@ -4,9 +4,10 @@ model.compile(optimizer='rmsprop',
 
 # dummy data creation (noisy section)
 import numpy as np
+from keras.utils import to_categorical
 data = np.random.random((1000, 3))
 labels = np.random.randint(2, size=(1000, 1))
-labels = keras.utils.to_categorical(labels, num_classes=2) # encode to one-hot vector
+labels = to_categorical(labels, num_classes=2) # encode to one-hot vector
 
 # model training
 model.fit(data, labels, epochs=10, batch_size=32)
